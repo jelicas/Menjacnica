@@ -1,6 +1,7 @@
-package menjacnica;
+package valuta;
 
 import java.util.GregorianCalendar;
+
 
 public class Valuta {
 	private String naziv;
@@ -25,36 +26,54 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv.isEmpty() || naziv == null) {
+			throw new RuntimeException();
+		}
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv.isEmpty() || skraceniNaziv == null) {
+			throw new RuntimeException();
+		}
 		this.skraceniNaziv = skraceniNaziv;
 	}
 	public double getProdajniKurs() {
 		return prodajniKurs;
 	}
 	public void setProdajniKurs(double prodajniKurs) {
+		if(prodajniKurs <= 0) {
+			throw new RuntimeException();
+		}
 		this.prodajniKurs = prodajniKurs;
 	}
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
 	public void setKupovniKurs(double kupovniKurs) {
+		if(kupovniKurs <= 0) {
+			throw new RuntimeException();
+		}
 		this.kupovniKurs = kupovniKurs;
 	}
 	public double getSrednjiKurs() {
 		return srednjiKurs;
 	}
 	public void setSrednjiKurs(double srednjiKurs) {
+		if(srednjiKurs <= 0) {
+			throw new RuntimeException();
+		}
 		this.srednjiKurs = srednjiKurs;
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
+		if(datum == null) {
+			throw new RuntimeException();
+		}
 		this.datum = datum;
 	}
 	@Override
