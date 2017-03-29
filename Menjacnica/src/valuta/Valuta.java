@@ -10,6 +10,9 @@ public class Valuta {
 	private double srednjiKurs;
 	private GregorianCalendar datum;
 	
+	public Valuta() {
+	}
+	
 	public Valuta(String naziv, String skraceniNaziv, double prodajniKurs, double kupovniKurs, double srednjiKurs,
 			GregorianCalendar datum) {
 		super();
