@@ -2,7 +2,6 @@ package valuta;
 
 import java.util.GregorianCalendar;
 
-
 public class Valuta {
 	private String naziv;
 	private String skraceniNaziv;
