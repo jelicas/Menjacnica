@@ -7,53 +7,37 @@ import valuta.Valuta;
 
 public class Menjacnica implements MenjacnicaInterfejs {
 	private LinkedList<Valuta> valute = new LinkedList<>();
-	@Override
+
 	public void dodajKursValuteZaOdredjeniDan(String naziv, String skraceniNaziv, double prodajniKurs,
 			double kupovniKurs, double srednjiKurs, GregorianCalendar datum) {
-		Valuta valuta = new Valuta();
+
+		Valuta valuta;
 		try {
-			valuta.setNaziv(naziv);
-			valuta.setSkraceniNaziv(skraceniNaziv);
-			valuta.setProdajniKurs(prodajniKurs);
-			valuta.setKupovniKurs(kupovniKurs);
-			valuta.setSrednjiKurs(srednjiKurs);
-			valuta.setDatum(datum);
-			
+			valuta = new Valuta(naziv, skraceniNaziv, prodajniKurs, kupovniKurs, srednjiKurs, datum);
 			valute.add(valuta);
-		} catch (Exception e) {
 			
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
-
-	@Override
 	public void obrisiKursValuteZaOdredjeniDan(String naziv, String skraceniNaziv, double prodajniKurs,
 			double kupovniKurs, double srednjiKurs, GregorianCalendar datum) {
-		Valuta valuta = new Valuta();
+		Valuta valuta;
 		try {
-			valuta.setNaziv(naziv);
-			valuta.setSkraceniNaziv(skraceniNaziv);
-			valuta.setProdajniKurs(prodajniKurs);
-			valuta.setKupovniKurs(kupovniKurs);
-			valuta.setSrednjiKurs(srednjiKurs);
-			valuta.setDatum(datum);
-			
+			valuta = new Valuta(naziv, skraceniNaziv, prodajniKurs, kupovniKurs, srednjiKurs, datum);
 			valute.remove(valuta);
 		} catch (Exception e) {
-			
 			e.printStackTrace();
 		}
 	}
 
-	@Override
+	
 	public Valuta pronadjiIVratiKursValuteZaOdredjeniDan(GregorianCalendar datum) {
 		try {
 			for (int i = 0; i < valute.size(); i++) {
-				if(valute.get(i).getDatum() == datum)
+				if(valute.get(i).getDatum().compareTo(datum) == 0)
 					return valute.get(i);
 			}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
