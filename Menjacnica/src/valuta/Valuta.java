@@ -1,4 +1,4 @@
-package menjacnica;
+package valuta;
 
 import java.util.GregorianCalendar;
 
