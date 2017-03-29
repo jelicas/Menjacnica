@@ -10,7 +10,6 @@ public class Menjacnica implements MenjacnicaInterfejs {
 
 	public void dodajKursValuteZaOdredjeniDan(String naziv, String skraceniNaziv, double prodajniKurs,
 			double kupovniKurs, double srednjiKurs, GregorianCalendar datum) {
-
 		Valuta valuta;
 		try {
 			valuta = new Valuta(naziv, skraceniNaziv, prodajniKurs, kupovniKurs, srednjiKurs, datum);
